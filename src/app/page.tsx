@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: `${process.env.NEXT_PUBLIC_HOST}"`,
     type: "website",
     images: [
-      `${process.env.NEXT_PUBLIC_HOST}/api/og?title="Posts By Some User"`,
+      `${process.env.NEXT_PUBLIC_HOST}/api/og?title=Posts%20By%20Some%20User&desc=Empty%20Description`,
     ],
   },
   twitter: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: "Assignment Provided by Medial",
     card: "summary_large_image",
     images: [
-      `${process.env.NEXT_PUBLIC_HOST}/api/og?title="Posts By Some User"`,
+      `${process.env.NEXT_PUBLIC_HOST}/api/og?title=Posts%20By%20Some%20User&desc=Empty%20Description`,
     ],
   },
 };

@@ -11,6 +11,7 @@ export async function GET(request: Request) {
   const website = "bakaotaku.dev";
 
   const title = searchParams.get("title") ?? "";
+  const desc = searchParams.get("desc") ?? "";
   const postId = searchParams.get("post_id") ?? "";
 
   let post_data: Post | undefined;
@@ -32,6 +33,7 @@ export async function GET(request: Request) {
   }
 
   const displayTitle = title || post_data?.title || "Title Required";
+  const displayDesc = desc || post_data?.content || "Desc Required";
 
   if (post_data?.image_url && isValidURL(post_data.image_url)) {
     return new ImageResponse(
@@ -57,6 +59,7 @@ export async function GET(request: Request) {
                 {post_data ? timeAgo(post_data.updatedAt!) : ""}
               </div>
               <h1 tw="text-[64px] text-white">{displayTitle}</h1>
+              <span tw="text-[32px] text-white">{displayDesc.slice(0, 60) + "..."}</span>
             </div>
             <img
               alt="Logo"
